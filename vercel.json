@@ -1,0 +1,138 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "cleanUrls": false,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/home",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/services",
+      "destination": "/services.html",
+      "permanent": true
+    },
+    {
+      "source": "/about",
+      "destination": "/about.html",
+      "permanent": true
+    },
+    {
+      "source": "/contact",
+      "destination": "/contact.html",
+      "permanent": true
+    },
+    {
+      "source": "/work",
+      "destination": "/work.html",
+      "permanent": true
+    },
+    {
+      "source": "/our-work",
+      "destination": "/work.html",
+      "permanent": true
+    },
+    {
+      "source": "/gallery",
+      "destination": "/work.html",
+      "permanent": true
+    },
+    {
+      "source": "/service-areas",
+      "destination": "/service-areas.html",
+      "permanent": true
+    },
+    {
+      "source": "/areas",
+      "destination": "/service-areas.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/emergency-plumbing",
+      "destination": "/services/emergency-plumbing.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/leak-detection-repair",
+      "destination": "/services/leak-detection-repair.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/drain-cleaning",
+      "destination": "/services/drain-cleaning.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/faucet-fixture-installation",
+      "destination": "/services/faucet-fixture-installation.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/toilet-repair-installation",
+      "destination": "/services/toilet-repair-installation.html",
+      "permanent": true
+    },
+    {
+      "source": "/services/bathroom-kitchen-renovation-plumbing",
+      "destination": "/services/bathroom-kitchen-renovation-plumbing.html",
+      "permanent": true
+    },
+    {
+      "source": "/reviews",
+      "destination": "/about.html#reviews",
+      "permanent": false
+    },
+    {
+      "source": "/book",
+      "destination": "/contact.html",
+      "permanent": false
+    },
+    {
+      "source": "/quote",
+      "destination": "/contact.html",
+      "permanent": false
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=()"
+        }
+      ]
+    },
+    {
+      "source": "/(css|js)/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=604800"
+        }
+      ]
+    }
+  ]
+}
