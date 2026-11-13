@@ -13,7 +13,7 @@ import os, html, json, re, hashlib
 BIZ = {
     "name": "Pro Gen Plumbing",
     "domain": "https://progenplumbing.com",   # live site address — used for canonical URLs, sitemap, link previews, schema
-    "owner": "Matthew",
+    "owner": "",
     "phone_display": "(647) 804-3744",
     "phone_tel": "+16478043744",
     "sms": "sms:+16478043744",
@@ -34,7 +34,7 @@ BIZ = {
     "review_count": "37",   # keep in sync with Google (was 16; Google showed 37 on Oct 1 2026)
     "hours_short": "Mon–Sun · By appointment",
     "hours_long": "Open 7 days a week by appointment. Same-day and evening availability — call or text and we'll fit you in.",
-    "form_action": "https://formspree.io/f/mbgleejo",   # Formspree form "Website contact form" (ProGen Plumbing project) — emails each request to Matthew
+    "form_action": "https://formspree.io/f/mbgleejo",   # Formspree form "Website contact form" (ProGen Plumbing project) — emails each request to the owner
     "tagline": "Where precision meets plumbing.",
     "founded": "2025",
 }
@@ -57,7 +57,7 @@ SERVICES = [
         "hero_sub": "Leaks don't wait for Monday. Neither do we.",
         "intro": [
             "A plumbing emergency is stressful, messy, and gets more expensive the longer it waits. Pro Gen Plumbing offers same-day response across the GTA — including evenings and weekends — for problems that can't sit until the next business day.",
-            "One of our recent customers called on a Sunday morning about water coming through their ceiling. Matthew was there the same day, opened the drywall, found and repaired the leak, and had a drywall installer patch the ceiling — all before dinner. That's the standard we hold ourselves to.",
+            "One of our recent customers called on a Sunday morning about water coming through their ceiling. We were there the same day, opened the drywall, found and repaired the leak, and had a drywall installer patch the ceiling — all before dinner. That's the standard we hold ourselves to.",
         ],
         "sections": [
             ("What counts as a plumbing emergency?", "ul", [
@@ -250,7 +250,7 @@ SERVICES = [
         "featured": True,
         "hero_sub": "Renovation plumbing planned around your budget — not the other way around.",
         "intro": [
-            "Planning a bathroom or kitchen renovation? Matthew will come to your home, look at what's actually there, and walk you through what will and won't work with your budget — instead of guessing over the phone. Customers consistently mention that in-person, no-pressure planning as the reason they chose Pro Gen.",
+            "Planning a bathroom or kitchen renovation? We'll come to your home, look at what's actually there, and walk you through what will and won't work with your budget — instead of guessing over the phone. Customers consistently mention that in-person, no-pressure planning as the reason they chose Pro Gen.",
             "From a straightforward vanity and faucet swap to a full bathroom reno with relocated fixtures, we handle the plumbing and coordinate the other trades you need.",
         ],
         "sections": [
@@ -330,12 +330,12 @@ OTHER_SERVICES = ["Water heater repair & replacement", "Shut-off valve replaceme
 
 # Real Google reviews (public). Names shortened to first name + initial for the website.
 REVIEWS = [
-    ("Nicolas T.", "NT", "I called Matthew on a Sunday morning for a leak I had coming from my ceiling. He came same day, cut open the drywall, located the leak, repaired it and got one of his drywall installers to come to repair the ceiling — all in the same day. Price was fair and he was very knowledgeable and transparent. I highly recommend.", "Ceiling leak — same-day repair"),
-    ("Domenic L.", "DL", "Matthew was very polite and professional along with his crew. Very responsive, completed a full bathroom reno and even took the time to clean up after his work!", "Full bathroom renovation"),
+    ("Nicolas T.", "NT", "I called Pro Gen on a Sunday morning for a leak I had coming from my ceiling. He came same day, cut open the drywall, located the leak, repaired it and got one of his drywall installers to come to repair the ceiling — all in the same day. Price was fair and he was very knowledgeable and transparent. I highly recommend.", "Ceiling leak — same-day repair"),
+    ("Domenic L.", "DL", "The plumber was very polite and professional along with his crew. Very responsive, completed a full bathroom reno and even took the time to clean up after his work!", "Full bathroom renovation"),
     ("Anthony S.", "AS", "I've used Pro Gen Plumbing twice now, and both experiences were great. The first time was for a leaking shut-off valve, and the second was to replace a kitchen faucet. They showed up when they said they would and explained everything before starting.", "Shut-off valve & kitchen faucet"),
-    ("Zuzana H.", "ZH", "Matthew and his colleague came to our house for a kitchen drain/pipe issue. Matthew was very professional and knowledgeable. He explained what the issue could be and went right to work. He solved everything very quickly.", "Kitchen drain repair"),
+    ("Zuzana H.", "ZH", "The Pro Gen team came to our house for a kitchen drain/pipe issue. The plumber was very professional and knowledgeable. He explained what the issue could be and went right to work. He solved everything very quickly.", "Kitchen drain repair"),
     ("Stefano G.", "SG", "I asked about renovating my upstairs bathroom and instead of talking about the details on the phone, he actually came to my house and gave me a few options on what would and wouldn't work with my budget.", "Bathroom renovation consult"),
-    ("Gabriel C.", "GC", "Matthew did an excellent job installing my kitchen sink faucet and drain. He was professional, efficient, and the work was clean and high quality. Everything works perfectly.", "Kitchen faucet & drain install"),
+    ("Gabriel C.", "GC", "Pro Gen did an excellent job installing my kitchen sink faucet and drain. He was professional, efficient, and the work was clean and high quality. Everything works perfectly.", "Kitchen faucet & drain install"),
     ("Julian S.", "JS", "These guys were great from start to finish. Communication was excellent, and they kept me updated every step of the way. They showed up on time, did quality work, and made the whole process easy.", "Plumbing repair"),
     ("Daniel S.", "DS", "My bathroom faucets needed fixing so I went with the cheapest guy I could find. Big mistake — the work was sloppy. A friend told me to call Pro Gen, and they fixed the fix properly.", "Bathroom faucet repair"),
     ("Elizabeth M.", "EM", "I was home alone and didn't have anyone to help me with my faucet, so Pro Gen came right away, gave me a very fair price and helped me out right away. Thank you again.", "Faucet repair"),
@@ -664,7 +664,7 @@ def layout(title, desc, body, current="", root="", extra_head="", path="", noind
     <div>
       <h2 class="footer__title">Company</h2>
       <ul>
-        <li><a href="{root}about.html">About Matthew</a></li>
+        <li><a href="{root}about.html">About us</a></li>
         <li><a href="{root}work.html">Our work</a></li>
         <li><a href="{root}service-areas.html">Service areas</a></li>
         <li><a href="{root}services.html">All services</a></li>
@@ -751,7 +751,7 @@ def reviews_section(root="", limit=6, alt=True, offset=0):
 def steps_block(root=""):
     steps = [
         ("Call, text, or send a request", "Tell us what's going on. A photo helps us arrive with the right parts."),
-        ("We come out and take a look", "For repairs we diagnose on-site. For renovations, Matthew visits and walks through what will and won't work with your budget."),
+        ("We come out and take a look", "For repairs we diagnose on-site. For renovations, we visit and walk through what will and won't work with your budget."),
         ("You get a clear price first", "No work starts until you've seen the price and said yes."),
         ("We do it properly", "Quality parts, clean work, tested before we leave."),
         ("We clean up", "Your home looks the way it did when we arrived — minus the problem."),
@@ -855,14 +855,14 @@ def page_home():
     <div class="reveal reveal--right">
       <span class="eyebrow">Why Pro Gen</span>
       <h2>A local plumber who shows up, explains things, and does clean work</h2>
-      <p>Pro Gen Plumbing is run by Matthew, a Toronto plumber based at St. Clair West. He started Pro Gen because too many homeowners were getting rushed jobs, vague quotes, and a mess left behind. The things customers mention most in their reviews are the things we care about most.</p>
+      <p>Pro Gen Plumbing is a locally owned Toronto plumbing company based at St. Clair West. We started Pro Gen because too many homeowners were getting rushed jobs, vague quotes, and a mess left behind. The things customers mention most in their reviews are the things we care about most.</p>
       <div class="feature-card mt-2">
         <div class="feature-row"><div class="icon-circle">{ICON["tag"]}</div><div><h3 class="h4">Price before work</h3><p>You'll see the price and the plan before we touch anything. No surprise line items.</p></div></div>
         <div class="feature-row"><div class="icon-circle">{ICON["wrench"]}</div><div><h3 class="h4">Fix the cause, not the symptom</h3><p>We'd rather find the real problem than sell you a repeat visit.</p></div></div>
         <div class="feature-row"><div class="icon-circle">{ICON["broom"]}</div><div><h3 class="h4">Clean work, clean site</h3><p>Drop cloths, tidy installs, and we take our mess with us.</p></div></div>
         {checklist(["Same-day & evening availability", "In-person quotes for renovations", "Can't do it? We'll find someone who can", "Serving the entire GTA"], "checklist--light")}
       </div>
-      <div class="mt-2">{btn("More about Matthew", "about.html", "btn btn--outline-dark")}</div>
+      <div class="mt-2">{btn("More about us", "about.html", "btn btn--outline-dark")}</div>
     </div>
   </div>
 </section>
@@ -1010,11 +1010,11 @@ def page_about():
 <section class="section">
   <div class="container grid grid-2">
     <div class="reveal reveal--left">
-      <span class="eyebrow">Meet Matthew</span>
+      <span class="eyebrow">About Us</span>
       <h2>Local, hands-on, and honest about what your home actually needs</h2>
-      <p>Pro Gen Plumbing is owned and run by Matthew, a Toronto plumber based at St. Clair West. Pro Gen started the way a lot of good trades businesses do: friends and neighbours kept asking for help, the work kept getting recommended, and the reviews followed.</p>
-      <p>Matthew still does the work himself, with a small crew when a job calls for it. That means the person who quotes your job is the person who shows up to do it — and the person whose name is on the reviews.</p>
-      <p><em>Owner bio placeholder — swap in Matthew's own words here: where he trained, how long he's been in the trade, and why he started Pro Gen.</em></p>
+      <p>Pro Gen Plumbing is a locally owned and operated plumbing company based at St. Clair West in Toronto. Pro Gen started the way a lot of good trades businesses do: friends and neighbours kept asking for help, the work kept getting recommended, and the reviews followed.</p>
+      <p>The owner still does the work himself, with a small crew when a job calls for it. That means the person who quotes your job is the person who shows up to do it — and the person the reviews are about.</p>
+      
     </div>
     {pimg("ensuite", "photo--tall reveal reveal--right")}
   </div>
@@ -1060,7 +1060,7 @@ def page_about():
 {reviews_section(limit=6)}
 {cta_strip()}
 '''
-    return layout(f"About {BIZ['name']} | Toronto Plumber", "Meet Matthew, the Toronto plumber behind Pro Gen Plumbing. Fair pricing, clean work, honest advice, and same-day availability across the GTA.", body, current="about",
+    return layout(f"About {BIZ['name']} | Toronto Plumber", "Meet the team behind Pro Gen Plumbing, a Toronto plumber. Fair pricing, clean work, honest advice, and same-day availability across the GTA.", body, current="about",
                   path="about.html", extra_head=breadcrumb_ld([("Home", ""), ("About", "about.html")]))
 
 def page_contact():
@@ -1101,7 +1101,7 @@ def page_contact():
         ("How quickly will you respond?", "We answer or call back as quickly as we can, usually within the hour during the day. For emergencies, calling is always faster than the form."),
         ("Do you charge to come out and look?", "We'll be upfront about any assessment fee when you call, and you'll always get a full price before repairs start."),
         ("Do you offer a warranty?", "We stand behind our work. Ask us about the warranty on labour and parts for your specific job — we'll put it in writing."),
-        ("Can you give a quote over the phone?", "For simple jobs like a faucet swap, often yes with a photo. For anything bigger — especially renovations — Matthew will come and look so the quote is actually accurate."),
+        ("Can you give a quote over the phone?", "For simple jobs like a faucet swap, often yes with a photo. For anything bigger — especially renovations — we'll come and look so the quote is actually accurate."),
       ])}
     </div>
   </div>
@@ -1236,6 +1236,12 @@ def vercel_json():
         "cleanUrls": False,
         "trailingSlash": False,
         "redirects": redirects,
+        "rewrites": [
+            {"source": "/assets/:path*", "destination": "/:path*"},
+            {"source": "/css/style.css", "destination": "/style.css"},
+            {"source": "/js/main.js", "destination": "/main.js"},
+            {"source": "/services/:path*.html", "destination": "/:path*.html"},
+        ],
         "headers": [
             {"source": "/(.*)", "headers": [
                 {"key": "X-Content-Type-Options", "value": "nosniff"},

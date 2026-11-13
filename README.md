@@ -10,7 +10,7 @@ Static site — plain HTML / CSS / JS. No build step is needed to host it; `buil
 index.html                 Home
 services.html              Services hub
 services/*.html            6 service detail pages
-about.html                 About Matthew
+about.html                 About us
 contact.html               Contact + form + map
 service-areas.html         GTA coverage
 work.html                  Our Work — project photos + Instagram reels
@@ -50,7 +50,7 @@ All job photos are listed once, in the `PHOTOS` block near the top of `build.py`
 
 Where the current 6 photos appear: home hero (`job-hero-ensuite.jpg`, a landscape crop of the ensuite), home "Why Pro Gen" capsules (onyx + green showers), home FAQ (tub ensuite), home work strip (curbless + in-progress), About page (ensuite, in-progress, curbless, onyx), Our Work (all six), and one per service page.
 
-Matthew's portrait: the About page "Meet Matthew" spot currently shows the ensuite photo. When you have a headshot, add it to `PHOTOS` (e.g. key `"matthew"`) and change `pimg("ensuite", "photo--tall reveal reveal--right")` in `page_about()` to `pimg("matthew", …)`.
+Owner portrait: the About page "About Us" spot currently shows the ensuite photo. When you have a headshot, add it to `PHOTOS` (e.g. key `"owner"`) and change `pimg("ensuite", "photo--tall reveal reveal--right")` in `page_about()` to `pimg("owner", …)`.
 
 ## Deploying on Vercel
 
@@ -70,7 +70,7 @@ To update the site later: run `python3 build.py`, then redeploy (push to GitHub,
    - Business Profile → "Ask for reviews" → copy the short review link into `BIZ["google_review"]` so "Leave a Google review" opens the review box directly.
    - Update `BIZ["review_count"]` as reviews grow (37 as of Oct 1, 2026).
 3. **Hours mismatch.** Google says "Open 24 hours"; the site says "Mon–Sun · By appointment, same-day & evening availability". Pick one and make both match (`BIZ["hours_short"]` in build.py, and the Google profile).
-4. **About page.** Replace the italic "Owner bio placeholder" paragraph with Matthew's own words, and add his portrait.
+4. **About page.** Add the owner's portrait and, if wanted, a short bio in his own words.
 5. **Licensing claims.** The site says "professional plumbing", not "licensed". Only add a licence number/wording once confirmed.
 6. **Email.** Optional: set up `info@progenplumbing.com` (Vercel doesn't do email — use Google Workspace, Zoho or your registrar's email forwarding) and swap it into `BIZ["email"]`.
 7. **Instagram reels.** Reel 1 is a collab post owned by @sebstonecountertops — if they delete it, the card falls back to a "Watch on Instagram" link. Add/replace reels in `REELS` in build.py.
